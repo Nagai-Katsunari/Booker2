@@ -1,0 +1,36 @@
+<div class="container">
+<div class="row">
+  <div class="col-xs-3">
+  <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <h1>User info</h1>
+    <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>name</th>
+          <th><%= @user.name %></th>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <th><%= @user.introduction %></th>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+   <p><%= link_to"",edit_user_path(@user),class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_20149"%></p>
+      
+    </div>
+
+    <%=render 'books/new',books: @books%>
+  </div>
+
+  <div class="col-xs-9">
+    <%=render 'books/list', books: @books%>
+  </div>
+  </div>
+</div>
+

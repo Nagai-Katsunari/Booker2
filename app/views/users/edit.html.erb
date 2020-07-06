@@ -1,0 +1,29 @@
+<h2 class="form-header-title">User info</h2>
+<div class="container">
+<%= form_for(@user) do |f| %>
+<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+  <div class="icon">
+    <label >Name</label>
+    <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"name"%>
+    <label class="control-label sr-only" for="inputEmail"></label>
+    <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+  </div>               
+
+  <div class="icon">
+    
+    <label >ProfileImage</label>
+    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+  </div>
+<div class="icon">
+    <label >Introduction</label>
+    <%= f.text_field :introduction, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"introduction"%>
+    <label class="control-label sr-only" for="inputEmail"></label>
+    <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+  </div>  
+  <%= f.submit "Update User", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+<% end %>
+</div>

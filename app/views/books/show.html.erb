@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+      <h1>User info</h1>
+   
+      <%= attachment_image_tag @book.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>name</th>
+            <th><%= @book.user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= @book.user.introduction %></th>
+          </tr>
+        </tbody>
+      </table>
+        <div class="row">
+          <p><%= link_to"",edit_user_path(@book.user),class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_20149"%></p>
+        
+        </div>
+   
+
+    <%=render 'books/new',book:@book%>
+  </div>
+
+  <div class="col-xs-9">
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <div class="users-table">
+      <span id="title">
+        <h1>Book detail</h1>
+      </span>
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td><%= attachment_image_tag @book.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "50x50" %>
+              <%= link_to @book.user.name,user_path(@book.user)%>
+            </td>
+              <td><%= link_to @book.title, book_path(@book)%></td>
+              <td><%=  @book.body %></td>
+              <% if @book.user.id == current_user.id %>
+              <td><%= link_to "Edit", edit_book_path(@book) ,class: "btn-sm btn-success edit_book_31953"%></td>
+              <td><%= link_to "Destroy", @book, method: :delete, "data-confirm" => "本当に削除しますか？" ,class: "btn-sm btn-danger destroy_book_31953"%></td>
+              <%end%>
+              
+            
+            </tr>
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,158 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";  /*ここを追加*/
+ @import "bootstrap"; 
+
+ /*show*/
+ 
+ .sinki{
+  display: flex;
+  margin-left: 50px;
+  line-height: 50px;
+  height: 50px;
+ }
+
+ .sinki-1{
+   margin-right: 50px;
+   width: 100px;
+ }
+
+ .sinki-2{
+   width: 400px;
+ }
+
+ .sinki-3 a{
+   line-height: 50px;
+   text-decoration: none;
+   color: black;
+   border-bottom: solid 1px black;
+ }
+
+ .sinki-3 a:hover{
+   background-color: black;
+   color: white;
+ }
+
+
+ .sinki-3{
+  margin-left: 100px;
+ }
+
+ .new{
+   margin-left: 50px;
+ }
+
+ .col-xs-12{
+   margin-top: 20px;
+ }
+ .new input:nth-child(2){
+   background-color: #337ab7;
+ }
+
+ /*table*/
+table{
+  
+  width: 1000px;
+}
+
+td:nth-child(1){
+  width: 200px;
+
+}
+td:nth-child(2){
+  text-decoration: none;
+  width: 400px;
+  color: black;
+}
+
+
+td a:nth-child(1):hover{
+ 
+  background-color: black;
+  color: white;
+}
+
+
+/*users*/
+.user{
+  margin-left: 50px;
+  display: flex;
+}
+.users1{
+  padding: 10px;
+  text-align: left;
+  width: 20%;
+}
+.users2{
+  width: 75%;
+}
+.users1 img{
+  margin: 0px;
+}
+.users1 .table{
+  margin: 0px;
+}
+
+.users1 .new{
+  margin: 0px;
+}
+
+.users2 .table{
+  margin: 0px;
+}
+
+/*edit*/
+.container{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-control{
+  width: 150px;
+}
+.icon{
+  margin-bottom: 10px;
+}
+
+/*about*/
+.about{
+  margin-left: 100px;
+}
+
+/*footer*/
+footer{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+}
+
+.about{
+  margin: 0px;
+}
+
+/*usertable*/
+.user #title h1{
+  width: 200px;
+}
+
+.users-table{
+  display: block;
+}
+
+.new{
+  margin: 0px;
+}
